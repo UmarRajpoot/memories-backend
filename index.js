@@ -13,10 +13,6 @@ app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
-app.get("/", (req, res) => {
-  res.send("Hello To Api");
-});
-
 app.use("/posts", PostRoutes);
 mongoose
   .connect(process.env.CONNECTION_STRING, {
@@ -30,3 +26,9 @@ mongoose
     });
   })
   .catch((error) => console.log(error.message));
+
+app.get("/", (req, res) => {
+  res.send("Hello To Api");
+});
+
+app.listen();
