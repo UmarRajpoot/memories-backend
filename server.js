@@ -21,9 +21,6 @@ mongoose
   })
   .then(() => {
     console.log("Connected");
-    // app.listen(PORT, () => {
-    //   console.log("Your Server is Up and Running...");
-    // });
   })
   .catch((error) => console.log(error.message));
 
@@ -31,4 +28,6 @@ app.get("/", (req, res) => {
   res.send("Hello To Api");
 });
 
-app.listen();
+app.listen(3000, () => {
+  console.log("Running");
+});
